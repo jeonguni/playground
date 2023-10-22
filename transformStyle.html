@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css transform</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      li {
+        list-style: none;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+        perspective: 1600px;
+        position: relative;
+      }
+      .wrap {
+        width: 450px;
+        height: 600px;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        animation: ani 30s linear infinite;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+      }
+      .item {
+        background-color: pink;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        margin-bottom: 30px;
+        margin: 30px;
+        backface-visibility: hidden;
+      }
+      /* 밖으로 원 */
+      /* li:nth-child(1) {
+        transform: rotateY(0) translateZ(calc(340px * 7 / 2 / 3.14));
+      }
+      li:nth-child(2) {
+        transform: rotateY(calc(360deg / 7)) translateZ(calc(340px * 7 / 2 / 3.14));
+      }
+      li:nth-child(3) {
+        transform: rotateY(calc(360deg / 7 * 2)) translateZ(calc(340px * 7 / 2 / 3.14));
+      }
+      li:nth-child(4) {
+        transform: rotateY(calc(360deg / 7 * 3)) translateZ(calc(340px * 7 / 2 / 3.14));
+      }
+      li:nth-child(5) {
+        transform: rotateY(calc(360deg / 7 * 4)) translateZ(calc(340px * 7 / 2 / 3.14));
+      }
+      li:nth-child(6) {
+        transform: rotateY(calc(360deg / 7 * 5)) translateZ(calc(340px * 7 / 2 / 3.14));
+      }
+      li:nth-child(7) {
+        transform: rotateY(calc(360deg / 7 * 6)) translateZ(calc(340px * 7 / 2 / 3.14));
+      } */
+
+      /* 안으로 원 */
+      li:nth-child(1) {
+        transform: rotateY(0deg) translateZ(-500px);
+      }
+      li:nth-child(2) {
+        transform: rotateY(calc(360deg / 7)) translateZ(-500px);
+      }
+      li:nth-child(3) {
+        transform: rotateY(calc(360deg / 7 * 2)) translateZ(-500px);
+      }
+      li:nth-child(4) {
+        transform: rotateY(calc(360deg / 7 * 3)) translateZ(-500px);
+      }
+      li:nth-child(5) {
+        transform: rotateY(calc(360deg / 7 * 4)) translateZ(-500px);
+      }
+      li:nth-child(6) {
+        transform: rotateY(calc(360deg / 7 * 5)) translateZ(-500px);
+      }
+      li:nth-child(7) {
+        transform: rotateY(calc(360deg / 7 * 6)) translateZ(-500px);
+      }
+
+      @keyframes ani {
+        0% {
+          -webkit-transform: rotateY(0deg);
+          transform: translate(-50%, -50%) rotateY(0deg);
+        }
+        100% {
+          -webkit-transform: rotateY(1turn);
+          transform: translate(-50%, -50%) rotateY(1turn);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="wrap">
+      <li class="item"></li>
+      <li class="item"></li>
+      <li class="item"></li>
+      <li class="item"></li>
+      <li class="item"></li>
+      <li class="item"></li>
+      <li class="item"></li>
+    </ul>
+  </body>
+</html>
