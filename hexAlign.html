@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HEX</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .hex {
+        width: 25%;
+        margin-bottom: 1.8%;
+        position: relative;
+        visibility: hidden;
+      }
+      .hex:nth-of-type(7n + 5) {
+        margin-left: 12.5%;
+      }
+      .hex::after {
+        content: '';
+        display: block;
+        padding-bottom: 80%;
+        /* 육각형 위 아래의 간격 padding-bottom으로 조절 */
+      }
+      .hex-inner {
+        position: absolute;
+        /* 육각형 크기를 조절하려면 width, padding-bottom값을 조절할 것 */
+        width: 99%;
+        padding-bottom: 114.6%;
+        overflow: hidden;
+        visibility: hidden;
+        transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+      }
+      .hex-inner * {
+        position: absolute;
+        visibility: visible;
+      }
+      .content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+        background: #02b4cd80;
+      }
+      .content span {
+        text-align: center;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="hex">
+        <div class="hex-inner">
+          <div class="content">
+            <span>HEX1</span>
+          </div>
+        </div>
+      </div>
+      <div class="hex">
+        <div class="hex-inner">
+          <div class="content">
+            <span>HEX2</span>
+          </div>
+        </div>
+      </div>
+      <div class="hex">
+        <div class="hex-inner">
+          <div class="content">
+            <span>HEX3</span>
+          </div>
+        </div>
+      </div>
+      <div class="hex">
+        <div class="hex-inner">
+          <div class="content">
+            <span>HEX4</span>
+          </div>
+        </div>
+      </div>
+      <div class="hex">
+        <div class="hex-inner">
+          <div class="content">
+            <span>HEX5</span>
+          </div>
+        </div>
+      </div>
+      <div class="hex">
+        <div class="hex-inner">
+          <div class="content">
+            <span>HEX6</span>
+          </div>
+        </div>
+      </div>
+      <div class="hex">
+        <div class="hex-inner">
+          <div class="content">
+            <span>HEX7</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
