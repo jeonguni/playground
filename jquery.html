@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"></script>
+    <style>
+      html {
+        height: 5000px;
+      }
+      header {
+        transition: all 0.3s;
+        background: red;
+        height: 100px;
+        width: 100%;
+      }
+      .wrap {
+        display: flex;
+        align-items: center;
+      }
+      .wrap > div {
+        height: 30px;
+        flex: 1;
+        background: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <header>This is header</header>
+    <section>
+      <div class="wrap">
+        <div>example</div>
+        <div>example</div>
+        <div>example</div>
+      </div>
+    </section>
+    <script>
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 0) {
+          $('header').addClass('active');
+        } else {
+          $('header').removeClass('active');
+        }
+      });
+    </script>
+  </body>
+</html>
